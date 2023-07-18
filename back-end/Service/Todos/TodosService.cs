@@ -1,9 +1,16 @@
-﻿using todos_back_end.Models;
+﻿using todos_back_end.Data;
+using todos_back_end.Models;
 
 namespace todos_back_end.Service.Todos
 {
     public class TodosService : ITodosService
     {
+        private readonly TodosDbContext _todosDbContext;
+
+        public TodosService(TodosDbContext todosDbContext)
+        {
+            _todosDbContext = todosDbContext;
+        }
         public bool AddTodo(Todo todo)
         {
             throw new NotImplementedException();
@@ -16,7 +23,7 @@ namespace todos_back_end.Service.Todos
 
         public List<Todo> GetTodos()
         {
-            return new List<Todo>();
+            return _todosDbContext.Todos.OrderByDescending(td => td.Id).ToList();
         }
 
         public bool Update(Todo todo)
