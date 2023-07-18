@@ -44,8 +44,10 @@ namespace todos_back_end.Controllers
 
         // DELETE api/<TodosController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            var message = _todosService.Delete(id)?"Success":"Fail";
+            return Ok(message);
         }
     }
 }

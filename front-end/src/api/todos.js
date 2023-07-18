@@ -7,3 +7,7 @@ const END_POINT = {
 export const getTodosAPI = () => {
   return axiosClient.get(`${END_POINT.TODOS}`);
 };
+
+export const delTodosAPI = (id) => {
+    return axiosClient.delete(`${END_POINT.TODOS}/${id}`);
+};

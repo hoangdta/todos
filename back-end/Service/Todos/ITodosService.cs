@@ -7,7 +7,7 @@ namespace todos_back_end.Service.Todos
         List<Todo> GetTodos();
         Boolean AddTodo(Todo todo);
         Boolean Update(Todo todo);
-        Boolean Delete(Todo todo);
+        Boolean Delete(int id);
 
     }
 }
