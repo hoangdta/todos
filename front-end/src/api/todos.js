@@ -9,5 +9,13 @@ export const getTodosAPI = () => {
 };
 
 export const delTodosAPI = (id) => {
-    return axiosClient.delete(`${END_POINT.TODOS}/${id}`);
+  return axiosClient.delete(`${END_POINT.TODOS}/${id}`);
+};
+
+export const addTodosAPI = (todo) => {
+  return axiosClient.post(`${END_POINT.TODOS}`, todo);
+};
+
+export const updateTodosAPI = (todo) => {
+  return axiosClient.put(`${END_POINT.TODOS}`, todo);
 };
