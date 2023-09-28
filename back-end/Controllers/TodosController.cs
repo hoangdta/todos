@@ -40,7 +40,7 @@ namespace todos_back_end.Controllers
 
         // PUT api/<TodosController>/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, Todo todo)
+        public IActionResult Put(Todo todo)
         {
             return _todosService.Update(todo) ? Ok() : NotFound();
         }

@@ -17,5 +17,5 @@ export const addTodosAPI = (todo) => {
 };
 
 export const updateTodosAPI = (todo) => {
-  return axiosClient.put(`${END_POINT.TODOS}`, todo);
+  return axiosClient.put(`${END_POINT.TODOS}/${todo.id}`, todo);
 };
